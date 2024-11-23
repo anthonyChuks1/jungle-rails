@@ -10,14 +10,14 @@ class CartsController < ApplicationController
   def add_item
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, +1)
-
+    flash[:info] = 'Item Added to cart.'
     redirect_back fallback_location: root_path
   end
 
   def remove_item
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, -1)
-
+    flash[:dark] = 'Item removed from cart'
     redirect_back fallback_location: root_path
   end
 
