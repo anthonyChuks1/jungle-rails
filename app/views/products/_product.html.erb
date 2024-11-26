@@ -10,10 +10,11 @@
 
     <%if(product.quantity == 0 )%>
       <button type="button" class="btn btn-danger" style="background-color: #cd5c5c;"> SOLD OUT </button>
-    <%end%>
+    <%else%>
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
     method: :post do %>
       <%= fa_icon "shopping-cart", text: 'Add' %> 
+      <%end%>
     <% end %>
   </div>
 </article>
